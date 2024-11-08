@@ -1,13 +1,12 @@
 name: Collect
 on:
-  # 0 0 * * 1 executed once a week on Sundays at 00:00  
-  # 每天凌晨一点
+  # executed once a week on Sundays at 00:00
   schedule:
-    - cron: "0 1 * * *"  
-  workflow_dispatch:  
+    - cron: "0 1 * * *"
+  workflow_dispatch:
 
 concurrency:
-  group: ${{ github.repository }}
+  group: ${{ github.repository }}  
   cancel-in-progress: true
 
 env:
